@@ -16,6 +16,7 @@ Hangman is a simple game where you have to guess the password and you have multi
 * CSS 3
 * Bootrap 4
 * Sass
+* VanillaJS
 
 ## Launch
 ```
