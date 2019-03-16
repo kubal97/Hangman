@@ -13,13 +13,21 @@
 <body>
     <header>
         <h1>Welcome to Hangman The Game!</h1>
-        <button class="btn btn-primary shadow-none">Play</button>
+        <button onclick="startGame()" id="start" class="btn btn-primary shadow-none">Play</button>
     </header>
     <main>
-
+        <div class="col-12">
+            <h1 id="password"></h1>
+        </div>
+        <div class="col-5 images">
+            <img id="img1" src="assets/1.jpg" alt="Test">
+        </div>
+        <div class="col-5 letters"></div>
+        <div style="clear: both"></div>
     </main>
     <footer>
         <p class="footer">Designed and coded by<a target="_blank" rel="noopener noreferrer" href="https://www.jk-design.nu"><b> Jakub Łasecki</b></a></p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
