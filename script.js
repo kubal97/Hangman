@@ -7,6 +7,11 @@ for(i=0;i<passLength;i++){
     else newPassword = newPassword + "-";
 }
 
+function returnPassword()
+{
+    document.getElementById("password").innerHTML = newPassword;
+}
+
 var letters = new Array(25);
 letters[0] = "A";
 letters[1] = "B";
@@ -39,13 +44,26 @@ letters[25] = "Z";
 function startGame() {
     document.querySelector('h1').style.display = "none";
     document.getElementById('start').style.display = "none";
-    document.getElementById('password').innerHTML = newPassword;
     document.querySelector('.images').style.display = "flex";
 
     var divContent = "";
+
     for(i=0;i<26;i++){
-        divContent = divContent + '<div class="letter">'+letters[i]+'</div>'
+        var element = "lit" + i;
+        divContent = divContent + '<div class="letter" onclick="check('+i+')" id="'+element+'">'+letters[i]+'</div>';
 
     }
     document.querySelector('.letters').innerHTML = divContent;
+
+    returnPassword();
+}
+
+function check(id) {
+    for(i=0; i<passLength; i++)
+    {
+        if (password.charAt(i) === letters[id]){
+            alert(i);
+        }
+    }
+    returnPassword();
 }

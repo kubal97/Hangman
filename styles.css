@@ -1,4 +1,6 @@
 body {
+  width: 100%;
+  height: 100%;
   font-size: 10px;
   margin: 0;
   padding: 0;
@@ -6,90 +8,149 @@ body {
   height: 100%;
   background: #1e130c;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to left, #9a8478, #1e130c);
+  background: -webkit-linear-gradient(to right, #9a8478, #1e130c);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to left, #9a8478, #1e130c);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
-  body header h1 {
+  background: linear-gradient(to right, #9a8478, #1e130c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body header h1 {
+  display: flex;
+  margin: auto;
+  color: white;
+  justify-content: center;
+  margin-top: 100px;
+}
+body header .btn, body header .btn:focus, body header .btn:active {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  margin-top: 50px;
+  width: 200px;
+  height: auto;
+  font-size: 1.5rem;
+  border: 2px solid white !important;
+  background-color: transparent !important;
+  text-decoration: none;
+  outline: none !important;
+  color: white;
+}
+body header .btn:hover, body header .btn:focus, body header .btn:active {
+  background-color: white !important;
+  color: #333;
+  border-color: white;
+}
+body main {
+  height: 90vh;
+  width: 100vw;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+body main .col-12 #password {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  margin-top: 70px;
+  text-transform: uppercase;
+}
+body main .container {
+  display: flex;
+  justify-content: space-between;
+}
+body main .container .images {
+  float: left;
+  display: none;
+  text-align: center;
+  margin: 5vh 50px auto 50px;
+}
+body main .container .images #img1 {
+  display: flex;
+  width: auto;
+  height: 60vh;
+  margin-top: 50px;
+  margin-left: auto;
+}
+body main .container .col-5 {
+  float: left;
+}
+body main .container .col-5 .letters {
+  width: auto;
+  margin: 20vh 50px auto 50px;
+  align-items: center;
+  padding: auto 20vw;
+  text-align: center;
+  float: left;
+}
+body main .container .col-5 .letters .letter {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  border: 3px solid gray;
+  cursor: pointer;
+  float: left;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  color: white;
+}
+body main .container .col-5 .letters .letter:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 3px solid white;
+}
+body footer p {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  white-space: pre;
+  color: white;
+  font-size: 0.8rem;
+  width: 100%;
+  text-decoration: none;
+  margin-bottom: 10px;
+  opacity: 0.3;
+}
+body footer p a, body footer p a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  body main .col-5 .letters {
+    margin: 10vh auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  main {
     display: flex;
-    margin: auto;
-    color: white;
-    justify-content: center;
-    margin-top: 100px; }
-  body header .btn, body header .btn:focus, body header .btn:active {
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    margin-top: 50px;
-    width: 200px;
-    height: auto;
-    font-size: 1.5rem;
-    border: 2px solid white !important;
-    background-color: transparent !important;
-    text-decoration: none;
-    outline: none !important;
-    color: white; }
-  body header .btn:hover, body header .btn:focus, body header .btn:active {
-    background-color: white !important;
-    color: #333;
-    border-color: white; }
-  body main .col-12 #password {
-    display: flex;
-    justify-content: center;
-    color: white;
-    font-size: 2rem;
-    margin-top: 70px;
-    text-transform: uppercase; }
-  body main .images {
-    float: left;
-    display: none;
+    flex-direction: column;
+  }
+
+  .images {
     text-align: center;
-    margin-right: 50px; }
-    body main .images #img1 {
-      display: flex;
-      width: auto;
-      height: 60vh;
-      margin-top: 50px;
-      margin-left: auto; }
-  body main .letters {
-    width: auto;
-    height: 60vh;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: 50px;
-    text-align: center;
-    float: left; }
-    body main .letters .letter {
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      padding: 5px;
-      margin: 5px;
-      border: 3px solid gray;
-      cursor: pointer;
-      float: left;
-      border-radius: 15px;
-      font-size: 1.3rem;
-      color: white; }
-    body main .letters .letter:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-      border: 3px solid white; }
-  body footer p {
-    position: absolute;
-    bottom: 0;
-    display: flex;
+  }
+
+  #img1 {
     margin: auto;
-    text-align: center;
-    justify-content: center;
-    white-space: pre;
-    color: white;
-    font-size: .8rem;
-    width: 100%;
-    text-decoration: none;
-    margin-bottom: 10px;
-    opacity: .3; }
-    body footer p a, body footer p a:hover {
-      color: white;
-      text-decoration: none; }
+  }
+
+  .col-12 {
+    margin: 0;
+    flex: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-5 {
+    margin: auto;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
