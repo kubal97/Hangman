@@ -59,7 +59,6 @@ body {
         color: white;
         font-size: 2rem;
         margin-top: 70px;
-        text-transform: uppercase;
       }
     }
 
@@ -107,9 +106,29 @@ body {
             color: white;
           }
 
-          .letter:hover {
+          .hover:hover {
             background-color: $letterBackground;
             border: 3px solid white;
+          }
+
+          .correct{
+            background-color: #668b57;
+            opacity: .5;
+            border: 3px solid #334a31;
+            cursor: default;
+          }
+
+          .wrong{
+            background-color: #8b423b;
+            opacity: .5;
+            border: 3px solid #4a2627;
+            cursor: default;
+          }
+
+          .failed{
+            font-size: 3rem;
+            color: white;
+            text-align: center;
           }
         }
       }
@@ -143,6 +162,7 @@ body {
 @media only screen and (max-width: 1000px){
   body main .col-5 .letters {
     margin: 10vh auto;
+    display: contents;
   }
 }
 

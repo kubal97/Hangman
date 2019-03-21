@@ -1,6 +1,8 @@
 var password = "My password is simple";
+password = password.toUpperCase();
 var passLength = password.length;
 var newPassword = "";
+var failsCount = 1;
 
 for(i=0;i<passLength;i++){
     if(password.charAt(i) == " ") newPassword = newPassword + " ";
@@ -13,32 +15,7 @@ function returnPassword()
 }
 
 var letters = new Array(25);
-letters[0] = "A";
-letters[1] = "B";
-letters[2] = "C";
-letters[3] = "D";
-letters[4] = "E";
-letters[5] = "F";
-letters[6] = "G";
-letters[7] = "H";
-letters[8] = "I";
-letters[9] = "J";
-letters[10] = "K";
-letters[11] = "L";
-letters[12] = "M";
-letters[13] = "N";
-letters[14] = "O";
-letters[15] = "P";
-letters[16] = "Q";
-letters[17] = "R";
-letters[18] = "S";
-letters[19] = "T";
-letters[20] = "U";
-letters[21] = "V";
-letters[22] = "W";
-letters[23] = "X";
-letters[24] = "Y";
-letters[25] = "Z";
+letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 
 function startGame() {
@@ -50,7 +27,7 @@ function startGame() {
 
     for(i=0;i<26;i++){
         var element = "lit" + i;
-        divContent = divContent + '<div class="letter" onclick="check('+i+')" id="'+element+'">'+letters[i]+'</div>';
+        divContent = divContent + '<div class="letter hover" onclick="check('+i+')" id="'+element+'">'+letters[i]+'</div>';
 
     }
     document.querySelector('.letters').innerHTML = divContent;
@@ -58,12 +35,50 @@ function startGame() {
     returnPassword();
 }
 
+String.prototype.setChar = function (place, char) {
+    if (place > this.length -1) return this.toString();
+    else return this.substr(0, place) + char + this.substr(place+1);
+}
+
 function check(id) {
+
+    var correct = false;
+
     for(i=0; i<passLength; i++)
     {
         if (password.charAt(i) === letters[id]){
-            alert(i);
+            newPassword = newPassword.setChar(i, letters[id]);
+            correct = true;
         }
     }
-    returnPassword();
+
+    if (correct === true){
+        document.getElementById("lit"+id).classList.add("correct");
+        document.getElementById("lit"+id).classList.remove("hover");
+        document.getElementById( "lit"+id).disabled = true;
+
+        returnPassword();
+    }
+
+    else {
+        failsCount++;
+        document.getElementById("lit"+id).classList.add("wrong");
+        document.getElementById("lit"+id).classList.remove("hover");
+        document.getElementById( "lit"+id).disabled = true;
+
+        var image = "Hangman"+ failsCount + ".png";
+        document.getElementById('image').innerHTML = '<img src="assets/'+image+'" alt="" />';
+
+        returnPassword();
+    }
+
+    if(failsCount === 7){
+        document.querySelectorAll(".letter").disabled = true;
+        document.querySelector(".letters").innerHTML = '<div class="failed">You Failed! The password is: '+password+'</div>'
+    }
+
+    if(newPassword == password){
+        document.querySelectorAll(".letter").disabled = true;
+        document.querySelector(".letters").innerHTML = '<div class="failed">Nice work! You have still '+(7-failsCount)+' lives</div>'
+    }
 }

@@ -52,7 +52,6 @@ body main .col-12 #password {
   color: white;
   font-size: 2rem;
   margin-top: 70px;
-  text-transform: uppercase;
 }
 body main .container {
   display: flex;
@@ -95,9 +94,26 @@ body main .container .col-5 .letters .letter {
   font-size: 1.3rem;
   color: white;
 }
-body main .container .col-5 .letters .letter:hover {
+body main .container .col-5 .letters .hover:hover {
   background-color: rgba(255, 255, 255, 0.3);
   border: 3px solid white;
+}
+body main .container .col-5 .letters .correct {
+  background-color: #668b57;
+  opacity: 0.5;
+  border: 3px solid #334a31;
+  cursor: default;
+}
+body main .container .col-5 .letters .wrong {
+  background-color: #8b423b;
+  opacity: 0.5;
+  border: 3px solid #4a2627;
+  cursor: default;
+}
+body main .container .col-5 .letters .failed {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
 }
 body footer p {
   position: fixed;
@@ -122,6 +138,7 @@ body footer p a, body footer p a:hover {
 @media only screen and (max-width: 1000px) {
   body main .col-5 .letters {
     margin: 10vh auto;
+    display: contents;
   }
 }
 @media only screen and (max-width: 800px) {
