@@ -1,4 +1,27 @@
-var password = "My password is simple";
+var passwordsList = [];
+passwordsList[0] = "Two wrongs do not make a right";
+passwordsList[1] = "The pen is mightier than the sword";
+passwordsList[2] = "When in Rome do as the Romans";
+passwordsList[3] = "The squeaky wheel gets the grease";
+passwordsList[4] = "When the going gets tough the tough get going";
+passwordsList[5] = "No man is an island";
+passwordsList[6] = "Fortune favors the bold";
+passwordsList[7] = "People who live in glass houses should not throw stones";
+passwordsList[8] = "Hope for the best but prepare for the worst";
+passwordsList[9] = "Better late than never";
+passwordsList[10] = "Birds of a feather flock together";
+passwordsList[11] = "Keep your friends close and your enemies closer";
+passwordsList[12] = "A picture is worth a thousand words";
+passwordsList[13] = "There is no such thing as a free lunch";
+passwordsList[14] = "There is no place like home";
+passwordsList[15] = "Discretion is the greater part of valor";
+passwordsList[16] = "The early bird catches the worm";
+passwordsList[17] = "Never look a gift horse in the mouth";
+passwordsList[18] = "You can not make an omelet without breaking a few eggs";
+passwordsList[19] = "God helps those who help themselves";
+
+var password = passwordsList[Math.floor(Math.random()*passwordsList.length)];
+//var password = "My password is simple";
 password = password.toUpperCase();
 var passLength = password.length;
 var newPassword = "";
@@ -67,18 +90,16 @@ function check(id) {
         document.getElementById( "lit"+id).disabled = true;
 
         var image = "Hangman"+ failsCount + ".png";
-        document.getElementById('image').innerHTML = '<img src="assets/'+image+'" alt="" />';
+        document.getElementById('image').innerHTML = '<img id="img" src="assets/'+image+'" alt="" />';
 
         returnPassword();
     }
 
     if(failsCount === 7){
-        document.querySelectorAll(".letter").disabled = true;
-        document.querySelector(".letters").innerHTML = '<div class="failed">You Failed! The password is: '+password+'</div>'
+        document.querySelector(".letters").innerHTML = '<div class="finish"><b>You Failed!</b><br> The password was: '+password+'</div><div class="btn btn-dark" onClick="window.location.reload()">Try again</div>'
     }
 
     if(newPassword == password){
-        document.querySelectorAll(".letter").disabled = true;
-        document.querySelector(".letters").innerHTML = '<div class="failed">Nice work! You have still '+(7-failsCount)+' lives</div>'
+        document.querySelector(".letters").innerHTML = '<div class="finish"><b>Correct!</b><br> You won with still having '+(8-failsCount)+' lives</div><div class="btn btn-dark" onClick="window.location.reload()">Try again</div>'
     }
 }

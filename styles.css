@@ -14,6 +14,7 @@ body {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 body header h1 {
+  text-align: center;
   display: flex;
   margin: auto;
   color: white;
@@ -40,7 +41,7 @@ body header .btn:hover, body header .btn:focus, body header .btn:active {
   border-color: white;
 }
 body main {
-  height: 90vh;
+  height: auto;
   width: 100vw;
   display: table-cell;
   text-align: center;
@@ -50,8 +51,9 @@ body main .col-12 #password {
   display: flex;
   justify-content: center;
   color: white;
-  font-size: 2rem;
   margin-top: 70px;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 4rem;
 }
 body main .container {
   display: flex;
@@ -63,12 +65,14 @@ body main .container .images {
   text-align: center;
   margin: 5vh 50px auto 50px;
 }
-body main .container .images #img1 {
+body main .container .images #img {
+  position: absolute;
   display: flex;
   width: auto;
   height: 60vh;
   margin-top: 50px;
   margin-left: auto;
+  animation: imagesAnimation 0.01s ease;
 }
 body main .container .col-5 {
   float: left;
@@ -80,6 +84,12 @@ body main .container .col-5 .letters {
   padding: auto 20vw;
   text-align: center;
   float: left;
+}
+body main .container .col-5 .letters .again {
+  display: none;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
 }
 body main .container .col-5 .letters .letter {
   width: 50px;
@@ -103,17 +113,32 @@ body main .container .col-5 .letters .correct {
   opacity: 0.5;
   border: 3px solid #334a31;
   cursor: default;
+  pointer-events: none;
 }
 body main .container .col-5 .letters .wrong {
   background-color: #8b423b;
   opacity: 0.5;
   border: 3px solid #4a2627;
   cursor: default;
+  pointer-events: none;
 }
-body main .container .col-5 .letters .failed {
+body main .container .col-5 .letters .finish {
   font-size: 3rem;
   color: white;
   text-align: center;
+}
+body main .container .col-5 .letters .btn-dark {
+  margin-top: 20px;
+  width: 200px;
+  padding: 10px;
+  background-color: #777;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+body main .container .col-5 .letters .btn-dark:hover {
+  background-color: #535353;
+  border: 2px solid #222;
 }
 body footer p {
   position: fixed;
@@ -135,10 +160,31 @@ body footer p a, body footer p a:hover {
   text-decoration: none;
 }
 
+@keyframes imagesAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media only screen and (max-width: 1000px) {
+  body {
+    background: #412f26;
+  }
+
   body main .col-5 .letters {
     margin: 10vh auto;
     display: contents;
+  }
+
+  .rwd {
+    margin-top: 600px !important;
+  }
+
+  .footer {
+    position: sticky;
+    bottom: 0;
   }
 }
 @media only screen and (max-width: 800px) {

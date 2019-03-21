@@ -16,6 +16,7 @@ body {
 
   header{
     h1{
+      text-align: center;
       display: flex;
       margin: auto;
       color: white;
@@ -46,7 +47,7 @@ body {
   }
 
   main{
-    height: 90vh;
+    height: auto;
     width: 100vw;
     display:table-cell;
     text-align:center;
@@ -57,8 +58,11 @@ body {
         display: flex;
         justify-content: center;
         color: white;
-        font-size: 2rem;
         margin-top: 70px;
+        font: {
+          family: 'Ubuntu Mono', monospace;
+          size: 4rem;
+        }
       }
     }
 
@@ -72,12 +76,14 @@ body {
         text-align: center;
         margin: 5vh 50px auto 50px;
 
-        #img1 {
+        #img {
+          position: absolute;
           display: flex;
           width: auto;
           height: 60vh;
           margin-top: 50px;
           margin-left: auto;
+          animation: imagesAnimation .01s ease;
         }
       }
 
@@ -91,6 +97,13 @@ body {
           padding: auto 20vw;
           text-align: center;
           float: left;
+
+          .again{
+            display: none;
+            font-size: 3rem;
+            color: white;
+            text-align: center;
+          }
 
           .letter {
             width: 50px;
@@ -116,6 +129,7 @@ body {
             opacity: .5;
             border: 3px solid #334a31;
             cursor: default;
+            pointer-events: none;
           }
 
           .wrong{
@@ -123,12 +137,28 @@ body {
             opacity: .5;
             border: 3px solid #4a2627;
             cursor: default;
+            pointer-events: none;
           }
 
-          .failed{
+          .finish{
             font-size: 3rem;
             color: white;
             text-align: center;
+          }
+
+          .btn-dark{
+            margin-top: 20px;
+            width: 200px;
+            padding: 10px;
+            background-color: #777;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.3rem;
+          }
+
+          .btn-dark:hover{
+            background-color: #535353;
+            border: 2px solid #222;
           }
         }
       }
@@ -159,10 +189,28 @@ body {
   }
 }
 
+@keyframes imagesAnimation {
+  0%{opacity: 0}
+  100%{opacity: 1}
+}
+
 @media only screen and (max-width: 1000px){
+  body{
+    background: #412f26;
+  }
+
   body main .col-5 .letters {
     margin: 10vh auto;
     display: contents;
+  }
+
+  .rwd{
+    margin-top: 600px !important;
+  }
+
+  .footer{
+    position: sticky;
+    bottom: 0;
   }
 }
 
