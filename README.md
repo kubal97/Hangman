@@ -20,7 +20,7 @@ Hangman is a simple game where you have to guess the password and you have multi
 
 ## Launch
 ```
-Soon
+https://kubal97.github.io/Hangman/
 ```
 
 ## Status
