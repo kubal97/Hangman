@@ -19,9 +19,8 @@ Hangman is a simple game where you have to guess the password and you have multi
 * VanillaJS
 
 ## Launch
-```
-[https://kubal97.github.io/Hangman/](https://kubal97.github.io/Hangman/)
-```
+
+[kubal97.github.io/Hangman](https://kubal97.github.io/Hangman/)
 
 ## Status
 Project status: _Release Alpha version_
