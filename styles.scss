@@ -8,8 +8,7 @@ body {
   font-size: 10px;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  overflow-x: hidden;
   background: #1e130c; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #9a8478, #1e130c); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #9a8478, #1e130c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -59,6 +58,7 @@ body {
         justify-content: center;
         color: white;
         margin-top: 70px;
+        width: 100%;
         font: {
           family: 'Ubuntu Mono', monospace;
           size: 4rem;
@@ -205,12 +205,19 @@ body {
   }
 
   .rwd{
-    margin-top: 600px !important;
+    margin-top: 650px !important;
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer{
     position: sticky;
     bottom: 0;
+  }
+
+  .letters{
+    text-align: center;
   }
 }
 
@@ -220,12 +227,9 @@ body {
     flex-direction: column;
   }
 
-  .images{
+  .images {
     text-align: center;
-  }
-
-  #img1 {
-    margin: auto;
+    margin: auto !important;
   }
 
   .col-12 {
@@ -240,6 +244,12 @@ body {
 
   .col-5{
       margin: auto;
+    max-width: 90vw;
+  }
+
+  #img{
+    width: 100vw !important;
+    height: auto !important;
   }
 }
 

@@ -4,8 +4,7 @@ body {
   font-size: 10px;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  overflow-x: hidden;
   background: #1e130c;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #9a8478, #1e130c);
@@ -52,6 +51,7 @@ body main .col-12 #password {
   justify-content: center;
   color: white;
   margin-top: 70px;
+  width: 100%;
   font-family: "Ubuntu Mono", monospace;
   font-size: 4rem;
 }
@@ -179,12 +179,19 @@ body footer p a, body footer p a:hover {
   }
 
   .rwd {
-    margin-top: 600px !important;
+    margin-top: 650px !important;
+    width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer {
     position: sticky;
     bottom: 0;
+  }
+
+  .letters {
+    text-align: center;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -195,10 +202,7 @@ body footer p a, body footer p a:hover {
 
   .images {
     text-align: center;
-  }
-
-  #img1 {
-    margin: auto;
+    margin: auto !important;
   }
 
   .col-12 {
@@ -213,6 +217,12 @@ body footer p a, body footer p a:hover {
 
   .col-5 {
     margin: auto;
+    max-width: 90vw;
+  }
+
+  #img {
+    width: 100vw !important;
+    height: auto !important;
   }
 }
 

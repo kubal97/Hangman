@@ -24,7 +24,7 @@ Soon
 ```
 
 ## Status
-Project is: _in progress_
+Project status: _Release Alpha version_
 
 ## Contact
 Feel free to contact me! [jklasecki@gmail.com](jklasecki@gmail.com)

@@ -21,14 +21,13 @@ passwordsList[18] = "You can not make an omelet without breaking a few eggs";
 passwordsList[19] = "God helps those who help themselves";
 
 var password = passwordsList[Math.floor(Math.random()*passwordsList.length)];
-//var password = "My password is simple";
 password = password.toUpperCase();
 var passLength = password.length;
 var newPassword = "";
 var failsCount = 1;
 
 for(i=0;i<passLength;i++){
-    if(password.charAt(i) == " ") newPassword = newPassword + " ";
+    if(password.charAt(i) === " ") newPassword = newPassword + " ";
     else newPassword = newPassword + "-";
 }
 
